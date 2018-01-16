@@ -156,7 +156,7 @@ class Seq2SeqModel():
                 else:
                     self.decoder_predict_decode = tf.expand_dims(decoder_outputs.sample_id, -1)
         # =================================4, 保存模型
-        self.saver = tf.train.Saver(tf.all_variables())
+        self.saver = tf.train.Saver(tf.global_variables())
 
     def train(self, sess, batch):
         #对于训练阶段，需要执行self.train_op, self.loss, self.summary_op三个op，并传入相应的数据

@@ -41,7 +41,7 @@ with tf.Session() as sess:
         print('Reloading model parameters..')
         model.saver.restore(sess, ckpt.model_checkpoint_path)
     else:
-        raise ValueError('No such file:[{}]'.format(FLAGS.model_path))
+        raise ValueError('No such file:[{}]'.format(FLAGS.model_dir))
     sys.stdout.write("> ")
     sys.stdout.flush()
     sentence = sys.stdin.readline()
